@@ -17,6 +17,12 @@
     transition: opacity 0.3s;
 }
 
+.tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
 .tooltip-container:hover .tooltiptext {
     opacity: 1;
 }
