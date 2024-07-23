@@ -22,10 +22,10 @@ export default class Tooltip extends LightningElement {
 
             switch (this.position) {
                 case 'top':
-                    tooltipPositionStyle = `bottom: ${container.height}px; left: 50%; transform: translateX(-50%);`;
+                    tooltipPositionStyle = `bottom: ${container.height + 10}px; left: 50%; transform: translateX(-50%);`;
                     break;
                 case 'bottom':
-                    tooltipPositionStyle = `top: ${container.height}px; left: 50%; transform: translateX(-50%);`;
+                    tooltipPositionStyle = `top: ${container.height + 10}px; left: 50%; transform: translateX(-50%);`;
                     break;
                 case 'left':
                     tooltipPositionStyle = `top: 50%; right: ${container.width}px; transform: translateY(-50%);`;
@@ -34,21 +34,21 @@ export default class Tooltip extends LightningElement {
                     tooltipPositionStyle = `top: 50%; left: ${container.width}px; transform: translateY(-50%);`;
                     break;
                 default:
-                    tooltipPositionStyle = `bottom: ${container.height}px; left: 50%; transform: translateX(-50%);`;
+                    tooltipPositionStyle = `bottom: ${container.height + 10}px; left: 50%; transform: translateX(-50%);`;
             }
 
             // Check for overflow and adjust position
             if (this.position === 'top' || this.position === 'bottom') {
                 if (tooltipRect.left < 0) {
-                    tooltipPositionStyle = `top: ${this.position === 'top' ? `-${container.height}px` : `${container.height}px`}; left: 0; transform: translateX(0);`;
+                    tooltipPositionStyle = `top: ${this.position === 'top' ? `-${container.height + 10}px` : `${container.height + 10}px`}; left: 0; transform: translateX(0);`;
                 } else if (tooltipRect.right > screenWidth) {
-                    tooltipPositionStyle = `top: ${this.position === 'top' ? `-${container.height}px` : `${container.height}px`}; right: 0; transform: translateX(0);`;
+                    tooltipPositionStyle = `top: ${this.position === 'top' ? `-${container.height + 10}px` : `${container.height + 10}px`}; right: 0; transform: translateX(0);`;
                 }
                 // Adjust vertical position
                 if (this.position === 'top') {
-                    tooltipPositionStyle = `bottom: ${container.height + 5}px; left: 50%; transform: translateX(-50%);`;
+                    tooltipPositionStyle = `bottom: ${container.height + 10}px; left: 50%; transform: translateX(-50%);`;
                 } else if (this.position === 'bottom') {
-                    tooltipPositionStyle = `top: ${container.height + 5}px; left: 50%; transform: translateX(-50%);`;
+                    tooltipPositionStyle = `top: ${container.height + 10}px; left: 50%; transform: translateX(-50%);`;
                 }
             } else if (this.position === 'left' || this.position === 'right') {
                 if (tooltipRect.top < 0) {
