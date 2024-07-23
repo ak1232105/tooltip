@@ -40,7 +40,7 @@ export default class Tooltip extends LightningElement {
             switch (adjustedPosition) {
                 case 'top':
                     tooltipPositionStyle = `bottom: ${container.height + 20}px; left: 50%; transform: translateX(-50%);`;
-                    arrowPositionStyle = `bottom: -10px; left: 50%; transform: translateX(-50%); border-width: 10px 10px 0 10px; border-color: black transparent transparent transparent; border-style: solid;`;
+                    arrowPositionStyle = `bottom: -10px; left: 50%; transform: translateX(-50%); border-width: 10px 10px 0 10px; border-color: white transparent transparent transparent; border-style: solid;`;
                     break;
                 case 'bottom':
                     tooltipPositionStyle = `top: ${container.height + 20}px; left: 50%; transform: translateX(-50%);`;
