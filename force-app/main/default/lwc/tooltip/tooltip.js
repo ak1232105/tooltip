@@ -44,13 +44,18 @@ export default class Tooltip extends LightningElement {
                 } else if (tooltipRect.right > screenWidth) {
                     tooltipPositionStyle = `top: ${this.position === 'top' ? `-${container.height}px` : `${container.height}px`}; right: 0; transform: translateX(0);`;
                 }
+                // Adjust vertical position
+                if (this.position === 'top') {
+                    tooltipPositionStyle = `bottom: ${container.height + 5}px; left: 50%; transform: translateX(-50%);`;
+                } else if (this.position === 'bottom') {
+                    tooltipPositionStyle = `top: ${container.height + 5}px; left: 50%; transform: translateX(-50%);`;
+                }
             } else if (this.position === 'left' || this.position === 'right') {
                 if (tooltipRect.top < 0) {
                     tooltipPositionStyle = `top: 0; ${this.position}: ${container.width}px; transform: translateY(0);`;
                 } else if (tooltipRect.bottom > screenHeight) {
                     tooltipPositionStyle = `bottom: 0; ${this.position}: ${container.width}px; transform: translateY(0);`;
                 }
-
                 // Additional check for right overflow
                 if (this.position === 'right' && tooltipRect.right > screenWidth) {
                     tooltipPositionStyle = `top: 50%; right: ${container.width}px; transform: translateY(-50%);`;
