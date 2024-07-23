@@ -1,0 +1,6 @@
+<template>
+    <div class="tooltip-container" onmouseover={showTooltip} onmouseout={hideTooltip}>
+        <slot></slot>
+        <div class="tooltiptext" style={tooltipStyle}>{text}</div>
+    </div>
+</template>
